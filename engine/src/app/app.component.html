@@ -1,28 +1,26 @@
 <div class="container">
+  <app-cockpit 
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <hr>
   <div class="row">
-    <app-header></app-header>
-  </div>
-  <div class="row">
-    <div class="row">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="col-xs-6">
-            <app-recipe-list-tag></app-recipe-list-tag>
-          </div>
-          <div class="col-xs-6">
-            <app-recipe-details-tag></app-recipe-details-tag>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="col-xs-12">
-            <app-shopping-list-tag></app-shopping-list-tag>
-          </div>
-        </div>
-      </div>
+    <div class="col-xs-12">
+      <button 
+        class="btn btn-primary" 
+        (click)="onChangeFirst()">Change 1 element</button>
+        <button 
+        class="btn btn-danger" 
+        (click)="onDestroyFirst()">Destroy 1 element</button>
+      <app-server 
+        *ngFor="let serverElement of serverElements"
+        [srvElement]="serverElement"
+        [name]="serverElement.name">
+      <p #contentParagraph>
+        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+      </p>
+      </app-server>
     </div>
   </div>
 </div>

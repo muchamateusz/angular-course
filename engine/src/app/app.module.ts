@@ -4,22 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './root/header/header.component';
-import { ListComponent } from './root/body/shopping-list/list.component';
-import { ListEditComponent } from './root/body/shopping-list/shopping-list-edit/list.edit.component';
-import { RecipeListComponent } from './root/body/recipes/recipe-list/recipe.list.component';
-import { RecipeItemComponent } from './root/body/recipes/recipe-list/recipe-item/recipe.item.component';
-import { RecipeDetailsComponent } from './root/body/recipes/recipe-details/recipe.details.component';
+import { ServerComponent } from './server/server.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ListComponent,
-    ListEditComponent,
-    RecipeListComponent,
-    RecipeItemComponent,
-    RecipeDetailsComponent
+    ServerComponent,
+    CockpitComponent
   ],
   imports: [
     BrowserModule,
